@@ -18,5 +18,7 @@ public class Main {
     String fileName="C:\\Users\\polar\\Desktop\\legislators-historic.csv";
     Congress congress = CSVCongress.createCongressFromCSV2(fileName);
     System.out.println(congress);
+    congress.sortByFirstName();
+    System.out.println(congress);
   }
 }

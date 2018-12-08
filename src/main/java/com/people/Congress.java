@@ -1,6 +1,8 @@
 package com.people;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -25,5 +27,18 @@ public class Congress {
       sb.append(p.toString()+ "\n");
     }
     return sb.toString();
+  }
+
+  public void sortByLastName(){
+    Collections.sort(people);
+  }
+
+  public void sortByFirstName(){
+    Collections.sort(people, new Comparator<Person>() {
+      @Override
+      public int compare(Person o1, Person o2) {
+        return o1.getFirstName().compareTo(o2.getFirstName());
+      }
+    });
   }
 }

@@ -1,10 +1,12 @@
 package com.people;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by polar
  * 12/1/2018 16:18
  */
-public class Person {
+public class Person implements Comparable<Person> {
   private String title;
   private String lastName;
   private String firstName;
@@ -59,5 +61,11 @@ public class Person {
   public String toString(){
     return firstName+" "+lastName+" "+title+" "+birthday+" "+gender;
     //return firstName+" "+lastName;
+  }
+
+  @Override
+  public int compareTo(@NotNull Person o) {
+    return lastName.compareTo(o.getLastName());
+
   }
 }
